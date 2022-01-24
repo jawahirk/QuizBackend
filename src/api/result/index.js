@@ -32,7 +32,7 @@ router.post('/',
  * @apiName RetrieveResults
  * @apiGroup Result
  * @apiPermission user
- * @apiParam {String} access_token user access token.
+ * @apiParam {String} access_token master access token.
  * @apiUse listParams
  * @apiSuccess {Number} count Total amount of results.
  * @apiSuccess {Object[]} rows List of results.
@@ -40,7 +40,7 @@ router.post('/',
  * @apiError 401 user access only.
  */
 router.get('/',
-  token({ required: true }),
+  master(),
   query(),
   index)
 
